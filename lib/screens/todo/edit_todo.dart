@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_state_management/models/todo_models.dart';
 import 'package:provider_state_management/providers/todo_providers.dart';
-import 'package:uuid/uuid.dart';
+import 'package:provider_state_management/widgets/info_widget.dart';
 
-import '../models/todo_models.dart';
-import 'info_widget.dart';
-
-class AddEditTodoWidget extends StatelessWidget {
-  const AddEditTodoWidget({super.key, required this.todo, required this.title});
+class EditTodo extends StatelessWidget {
+  const EditTodo({super.key, required this.title, required this.todo});
   final String title;
   final TodoModel? todo;
 
@@ -41,7 +39,7 @@ class AddEditTodoWidget extends StatelessWidget {
       actions: [
         Expanded(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextButton(
                 onPressed: () {
@@ -80,13 +78,14 @@ class AddEditTodoWidget extends StatelessWidget {
                         TodoModel(id: todo!.id, todo: _todoController.text),
                       );
                       Navigator.pop(context);
-                    } else {
-                      const uuid = Uuid();
-                      Provider.of<TodoListProvider>(context, listen: false)
-                          .addTodo(TodoModel(
-                              id: uuid.v4(), todo: _todoController.text));
-                      Navigator.pop(context);
                     }
+                    // else {
+                    //   const uuid = Uuid();
+                    //   Provider.of<TodoListProvider>(context, listen: false)
+                    //       .addTodo(TodoModel(
+                    //           id: uuid.v4(), todo: _todoController.text));
+                    //   Navigator.pop(context);
+                    // }
                   }
                 },
                 child: const Text("Simpan"),

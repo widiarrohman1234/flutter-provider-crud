@@ -1,24 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_state_management/models/todo_models.dart';
 import 'package:provider_state_management/providers/todo_providers.dart';
+import 'package:provider_state_management/widgets/info_widget.dart';
 import 'package:uuid/uuid.dart';
 
-import '../models/todo_models.dart';
-import 'info_widget.dart';
+class AddTodo extends StatelessWidget {
+  AddTodo({super.key, required this.title, required this.todo});
 
-class AddEditTodoWidget extends StatelessWidget {
-  const AddEditTodoWidget({super.key, required this.todo, required this.title});
   final String title;
   final TodoModel? todo;
-
+  TextEditingController _todoController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    TextEditingController _todoController = TextEditingController();
-
-    if (todo != null) {
-      _todoController.text = todo!.todo;
-    }
-
     return AlertDialog(
       title: Text(title),
       content: SingleChildScrollView(
@@ -41,7 +35,7 @@ class AddEditTodoWidget extends StatelessWidget {
       actions: [
         Expanded(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextButton(
                 onPressed: () {
@@ -49,19 +43,19 @@ class AddEditTodoWidget extends StatelessWidget {
                 },
                 child: const Text("Batal"),
               ),
-              TextButton(
-                onPressed: () {
-                  Provider.of<TodoListProvider>(
-                    context,
-                    listen: false,
-                  ).removeTodo(todo!);
-                  Navigator.pop(context);
-                },
-                child: const Text(
-                  "Hapus",
-                  style: TextStyle(color: Colors.red),
-                ),
-              ),
+              // TextButton(
+              //   onPressed: () {
+              //     Provider.of<TodoListProvider>(
+              //       context,
+              //       listen: false,
+              //     ).removeTodo(todo!);
+              //     Navigator.pop(context);
+              //   },
+              //   child: const Text(
+              //     "Hapus",
+              //     style: TextStyle(color: Colors.red),
+              //   ),
+              // ),
               TextButton(
                 onPressed: () {
                   if (_todoController.text.isEmpty) {

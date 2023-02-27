@@ -7,16 +7,6 @@ class TodoListProvider with ChangeNotifier {
 
   List<TodoModel> get todoList => _todoList;
 
-  // void getTodo()  {
-  //   try {
-  //     List<TodoModel> todoList =  todoList.getTodoData();
-  //     _todoList = todoList;
-  //     print(_todoList);
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  // }
-
   void addTodo(TodoModel todo) {
     _todoList.add(todo);
     notifyListeners();
