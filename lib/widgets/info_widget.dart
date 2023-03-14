@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class InfoWidget extends StatelessWidget {
   final String title;
@@ -10,8 +9,6 @@ class InfoWidget extends StatelessWidget {
     required this.title,
     required this.content,
   });
-  // final String title;
-  // final String content;
 
   @override
   Widget build(BuildContext context) {

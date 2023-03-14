@@ -4,18 +4,18 @@ import '../models/todo_models.dart';
 
 class TodoListProvider with ChangeNotifier {
   List<TodoModel> _todoList = [];
-
   List<TodoModel> get todoList => _todoList;
+  bool isLoading = false;
 
-  // void getTodo()  {
-  //   try {
-  //     List<TodoModel> todoList =  todoList.getTodoData();
-  //     _todoList = todoList;
-  //     print(_todoList);
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  // }
+  Future<void> getTodo() async {
+    isLoading = false;
+    notifyListeners();
+
+    _todoList = todoList;
+
+    isLoading = false;
+    notifyListeners();
+  }
 
   void addTodo(TodoModel todo) {
     _todoList.add(todo);

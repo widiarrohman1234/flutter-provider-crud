@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_state_management/providers/todo_providers.dart';
-
-import 'screens/home_screen.dart';
+import 'providers/todo_providers.dart';
+import 'screens/todo/list_todo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HomeScreen(),
+        home: const ListTodo(),
       ),
     );
   }
