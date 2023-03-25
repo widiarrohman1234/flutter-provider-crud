@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../models/todo_models.dart';
+import '../models/todo_model.dart';
 
 class TodoListProvider with ChangeNotifier {
   List<TodoModel> _todoList = [];

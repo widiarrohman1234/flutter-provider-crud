@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../models/todo_models.dart';
-import '../../providers/todo_providers.dart';
+import '../../models/todo_model.dart';
+import '../../providers/todo_provider.dart';
 import '../../widgets/info_widget.dart';
 
 class AddTodo extends StatelessWidget {

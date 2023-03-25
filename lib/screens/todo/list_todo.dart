@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../providers/todo_providers.dart';
+import '../../providers/todo_provider.dart';
 import 'add_todo.dart';
 import 'edit_todo.dart';
 
