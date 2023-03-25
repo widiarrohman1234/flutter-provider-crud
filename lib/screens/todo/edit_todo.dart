@@ -5,7 +5,6 @@ import '../../models/todo_models.dart';
 import '../../providers/todo_providers.dart';
 import '../../widgets/info_widget.dart';
 
-
 class EditTodo extends StatelessWidget {
   const EditTodo({super.key, required this.title, required this.todo});
   final String title;

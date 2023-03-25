@@ -14,7 +14,6 @@ class AddTodo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return AlertDialog(
       title: Text(title),
       content: SingleChildScrollView(
@@ -68,11 +67,11 @@ class AddTodo extends StatelessWidget {
 
                       Provider.of<TodoListProvider>(context, listen: false)
                           .addTodo(
-                              TodoModel(
-                                id: uuid.v4(),
-                                todo: _todoController.text,
-                              ),
-                            );
+                        TodoModel(
+                          id: uuid.v4(),
+                          todo: _todoController.text,
+                        ),
+                      );
                       Navigator.pop(context);
                     }
                   }
