@@ -1,19 +1,19 @@
-class TodoModel {
-  late final String id;
+class TODOMODEL {
+  late final String xyz;
   late final String todo;
 
-  TodoModel({
-    required this.id,
+  TODOMODEL({
+    required this.xyz,
     required this.todo,
   });
 
-  TodoModel.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
+  TODOMODEL.fromJson(Map<String, dynamic> json) {
+    xyz = json['xyz'];
     todo = json['todo'];
   }
 
   Map<String, dynamic> toJson() => {
-        'id': id,
+        'xyz': xyz,
         'todo': todo,
       };
 }
