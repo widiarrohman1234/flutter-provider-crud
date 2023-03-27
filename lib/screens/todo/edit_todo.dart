@@ -8,7 +8,7 @@ import '../../widgets/info_widget.dart';
 class EditTodo extends StatelessWidget {
   const EditTodo({super.key, required this.title, required this.todo});
   final String title;
-  final TodoModel? todo;
+  final TODOMODEL? todo;
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class EditTodo extends StatelessWidget {
                     if (todo != null) {
                       Provider.of<TodoListProvider>(context, listen: false)
                           .updateTode(
-                        TodoModel(id: todo!.id, todo: todoController.text),
+                        TODOMODEL(xyz: todo!.xyz, todo: todoController.text),
                       );
                       Navigator.pop(context);
                     }

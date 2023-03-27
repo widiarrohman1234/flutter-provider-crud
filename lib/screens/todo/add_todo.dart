@@ -9,7 +9,7 @@ import '../../widgets/info_widget.dart';
 class AddTodo extends StatelessWidget {
   AddTodo({super.key, required this.title, required this.todo});
   final String title;
-  final TodoModel? todo;
+  final TODOMODEL? todo;
   final TextEditingController _todoController = TextEditingController();
 
   @override
@@ -59,7 +59,7 @@ class AddTodo extends StatelessWidget {
                     if (todo != null) {
                       Provider.of<TodoListProvider>(context, listen: false)
                           .updateTode(
-                        TodoModel(id: todo!.id, todo: _todoController.text),
+                        TODOMODEL(xyz: todo!.xyz, todo: _todoController.text),
                       );
                       Navigator.pop(context);
                     } else {
@@ -67,8 +67,8 @@ class AddTodo extends StatelessWidget {
 
                       Provider.of<TodoListProvider>(context, listen: false)
                           .addTodo(
-                        TodoModel(
-                          id: uuid.v4(),
+                        TODOMODEL(
+                          xyz: uuid.v4(),
                           todo: _todoController.text,
                         ),
                       );
