@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../models/todo_model.dart';
 
 class TodoListProvider with ChangeNotifier {
-  List<TODOMODEL> _todoList = [];
-  List<TODOMODEL> get todoList => _todoList;
+  List<TodoModel> _todoList = [];
+  List<TodoModel> get todoList => _todoList;
   bool isLoading = false;
 
   Future<void> getTodo() async {
@@ -17,18 +17,18 @@ class TodoListProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void addTodo(TODOMODEL todo) {
+  void addTodo(TodoModel todo) {
     _todoList.add(todo);
     notifyListeners();
   }
 
-  void removeTodo(TODOMODEL todo) {
-    _todoList = _todoList.where((item) => item.xyz != todo.xyz).toList();
+  void removeTodo(TodoModel todo) {
+    _todoList = _todoList.where((item) => item.id != todo.id).toList();
     notifyListeners();
   }
 
-  void updateTode(TODOMODEL todo) {
-    _todoList[_todoList.indexWhere((item) => item.xyz == todo.xyz)] = todo;
+  void updateTode(TodoModel todo) {
+    _todoList[_todoList.indexWhere((item) => item.id == todo.id)] = todo;
     notifyListeners();
   }
 }
