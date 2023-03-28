@@ -7,7 +7,8 @@ class TodoListProvider with ChangeNotifier {
   List<TODOMODEL> get todoList => _todoList;
   bool isLoading = false;
 
-  Future<void> getTodo() async {
+  Future<void> getTodo() async 
+  {
     isLoading = false;
     notifyListeners();
 
@@ -17,17 +18,20 @@ class TodoListProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void addTodo(TODOMODEL todo) {
+  void addTodo(TODOMODEL todo) 
+  {
     _todoList.add(todo);
     notifyListeners();
   }
 
-  void removeTodo(TODOMODEL todo) {
+  void removeTodo(TODOMODEL todo) 
+  {
     _todoList = _todoList.where((item) => item.xyz != todo.xyz).toList();
     notifyListeners();
   }
 
-  void updateTode(TODOMODEL todo) {
+  void updateTode(TODOMODEL todo) 
+  {
     _todoList[_todoList.indexWhere((item) => item.xyz == todo.xyz)] = todo;
     notifyListeners();
   }

@@ -14,19 +14,23 @@ class ListTodo extends StatefulWidget {
 
 class _ListTodoState extends State<ListTodo> {
   @override
-  void initState() {
+  void initState() 
+  {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) 
+    {
       Provider.of<TodoListProvider>(context, listen: false).getTodo();
     });
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Todo List Provider Array Fix"),
+        title: const Text
+        ("Todo List Provider Array Fix"),
       ),
       body: Consumer<TodoListProvider>(
         builder: (
@@ -37,7 +41,8 @@ class _ListTodoState extends State<ListTodo> {
           return ListView(
             padding: const EdgeInsets.all(20.0),
             children: value.todoList.isNotEmpty
-                ? value.todoList.map((todo) {
+                ? value.todoList.map((todo) 
+                {
                     return Card(
                       child: ListTile(
                         title: Text(todo.todo),
@@ -45,7 +50,8 @@ class _ListTodoState extends State<ListTodo> {
                         onTap: () {
                           showDialog(
                             context: context,
-                            builder: (context) {
+                            builder: (context) 
+                            {
                               return EditTodo(
                                 title: "Edit Todo",
                                 todo: todo,
@@ -56,6 +62,7 @@ class _ListTodoState extends State<ListTodo> {
                       ),
                     );
                   }).toList()
+
                 : [
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
@@ -73,7 +80,8 @@ class _ListTodoState extends State<ListTodo> {
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
-        onPressed: () {
+        onPressed: () 
+        {
           showDialog(
               context: context,
               builder: (context) {

@@ -17,7 +17,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => TodoListProvider()),
       ],
       child: MaterialApp(
-        title: 'Todo List Provider Array',
+        title: 
+        'Todo List Provider Array',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),

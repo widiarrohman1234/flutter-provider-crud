@@ -11,10 +11,12 @@ class EditTodo extends StatelessWidget {
   final TODOMODEL? todo;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     TextEditingController todoController = TextEditingController();
 
-    if (todo != null) {
+    if (todo != null) 
+    {
       todoController.text = todo!.todo;
     }
 
@@ -31,8 +33,10 @@ class EditTodo extends StatelessWidget {
                   filled: true,
                   isDense: true,
                   fillColor: Colors.grey.shade100,
-                  labelText: "Todo",
-                  hintText: "Masukkan todo"),
+                  labelText: 
+                  "Todo",
+                  hintText: 
+                  "Masukkan todo"),
             )
           ],
         ),
@@ -46,7 +50,8 @@ class EditTodo extends StatelessWidget {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Text("Batal"),
+                child: const Text
+                ("Batal"),
               ),
               TextButton(
                 onPressed: () {
@@ -68,12 +73,18 @@ class EditTodo extends StatelessWidget {
                         context: context,
                         builder: (context) {
                           return const InfoWidget(
-                            title: "Error !",
-                            content: "Todo tidak boleh kosong",
+                            title: 
+                            "Error !",
+                            content: 
+                            "Todo tidak boleh kosong",
                           );
                         });
-                  } else {
-                    if (todo != null) {
+                  } 
+
+                  else 
+                  {
+                    if (todo != null) 
+                    {
                       Provider.of<TodoListProvider>(context, listen: false)
                           .updateTode(
                         TODOMODEL(xyz: todo!.xyz, todo: todoController.text),
@@ -82,7 +93,8 @@ class EditTodo extends StatelessWidget {
                     }
                   }
                 },
-                child: const Text("Simpan"),
+                child: const Text
+                ("Simpan"),
               )
             ],
           ),

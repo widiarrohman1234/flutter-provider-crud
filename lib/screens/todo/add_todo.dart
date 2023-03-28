@@ -13,7 +13,8 @@ class AddTodo extends StatelessWidget {
   final TextEditingController _todoController = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return AlertDialog(
       title: Text(title),
       content: SingleChildScrollView(
@@ -27,8 +28,10 @@ class AddTodo extends StatelessWidget {
                   filled: true,
                   isDense: true,
                   fillColor: Colors.grey.shade100,
-                  labelText: "Todo",
-                  hintText: "Masukkan todo"),
+                  labelText: 
+                  "Todo",
+                  hintText: 
+                  "Masukkan todo"),
             )
           ],
         ),
@@ -42,27 +45,37 @@ class AddTodo extends StatelessWidget {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Text("Batal"),
+                child: const Text
+                ("Batal"),
               ),
               TextButton(
-                onPressed: () {
-                  if (_todoController.text.isEmpty) {
+                onPressed: () 
+                {
+                  if (_todoController.text.isEmpty) 
+                  {
                     showDialog(
                         context: context,
                         builder: (context) {
                           return const InfoWidget(
-                            title: "Error !",
-                            content: "Todo tidak boleh kosong",
+                            title: 
+                            "Error !",
+                            content: 
+                            "Todo tidak boleh kosong",
                           );
                         });
-                  } else {
-                    if (todo != null) {
+                  } 
+                  else 
+                  {
+                    if (todo != null) 
+                    {
                       Provider.of<TodoListProvider>(context, listen: false)
                           .updateTode(
                         TODOMODEL(xyz: todo!.xyz, todo: _todoController.text),
                       );
                       Navigator.pop(context);
-                    } else {
+                    } 
+                    else 
+                    {
                       const uuid = Uuid();
 
                       Provider.of<TodoListProvider>(context, listen: false)
